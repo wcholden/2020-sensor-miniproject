@@ -11,7 +11,7 @@ The port number is arbitrary, as long as the server and client are on the same p
 Naturally, the server must be started before this client attempts to connect.
 """
 
-import websockets
+import websockets 
 import zlib
 from pathlib import Path
 import argparse
