@@ -8,7 +8,7 @@ These dictionaries are immediately put into Pandas DataFrames for easier process
 
 Feel free to save your data in a better format--I was just showing what one might do quickly.
 """
-import pandas
+import pandas as pd
 from pathlib import Path
 import argparse
 import json
@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
+def load_data(file: Path) -> T.Dict[str, pd.DataFrame]:
 
     temperature = {}
     occupancy = {}
@@ -35,9 +35,9 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
             co2[time] = {room: r[room]["co2"][0]}
 
     data = {
-        "temperature": pandas.DataFrame.from_dict(temperature, "index").sort_index(),
-        "occupancy": pandas.DataFrame.from_dict(occupancy, "index").sort_index(),
-        "co2": pandas.DataFrame.from_dict(co2, "index").sort_index(),
+        "temperature": pd.DataFrame.from_dict(temperature, "index").sort_index(),
+        "occupancy": pd.DataFrame.from_dict(occupancy, "index").sort_index(),
+        "co2": pd.DataFrame.from_dict(co2, "index").sort_index(),
     }
 
     return data
@@ -51,6 +51,31 @@ if __name__ == "__main__":
     file = Path(P.file).expanduser()
 
     data = load_data(file)
+
+    temp = pd.DataFrame(data['temperature'])
+    occ = pd.DataFrame(data['occupancy'])
+    co2 = pd.DataFrame(data['co2'])
+
+    ax_temp = temp.plot.kde()
+    ax_occ = occ.plot.kde()
+    ax_co2 = co2.plot.kde()
+
+    med_temp = temp.median(axis = 0)
+    print("median temperature: \n" , med_temp , "\n")
+    med_occ = occ.median(axis = 0)
+    print("median occupancy: \n" , med_occ , "\n")
+    med_co2 = co2.median(axis = 0)
+    print("median co2: \n" , med_co2 , "\n")
+
+    var_temp = temp.var()
+    print("temperature variance: \n" , var_temp , "\n")
+    var_occ = occ.var()
+    print("occupancy variance: \n" , var_occ , "\n")
+    var_co2 = co2.var()
+    print("co2 variance: \n" , var_co2 , "\n")
+
+
+
 
     for k in data:
         # data[k].plot()
