@@ -82,9 +82,10 @@ if __name__ == "__main__":
     print("co2 variance: \n" , var_co2 , "\n")
 
 
+
 the_interval = {}
 for k in range(0, 1197):
-    the_interval[k] = datetime_to_float(temp['lab1'].index[k+1]) - datetime_to_float(temp['lab1'].index[k])
+    the_interval[k] = datetime_to_float(temp.index[k+1]) - datetime_to_float(temp.index[k])
 
 
 interval = {"interval": pd.DataFrame.from_dict(the_interval, "index").sort_index()}
@@ -96,8 +97,6 @@ mean_inte = intz.mean(axis = 0)
 print("mean interval: \n" , mean_inte , "\n")
 var_inte = intz.var()
 print("interval variance: \n" , var_inte , "\n")
-
-print(intz)
 
 
 plt.show()
