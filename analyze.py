@@ -64,6 +64,7 @@ if __name__ == "__main__":
     co2 = pd.DataFrame(data['co2'])
 
     ax_temp = temp.plot.kde()
+    ax_temp.ylabel = "temperature (deg C)"
     ax_occ = occ.plot.kde()
     ax_co2 = co2.plot.kde()
 

@@ -54,8 +54,6 @@ if __name__ == "__main__":
 
     num_items = temp.count()
 
-    print("number of items: \n" , num_items , "\n")
-
     mean_temp = temp.mean(axis = 0)
     print("mean temperature: \n" , mean_temp , "\n")
 
@@ -68,7 +66,7 @@ if __name__ == "__main__":
     office_bad = 0
 
 
-    var_coeff = 1
+    var_coeff = 2
 
     max_lab = mean_temp.lab1 + (var_coeff * math.sqrt(var_temp.lab1))
     min_lab = mean_temp.lab1 - (var_coeff * math.sqrt(var_temp.lab1))
@@ -81,7 +79,7 @@ if __name__ == "__main__":
 
 
 
-    print("lab: " , max_lab , min_lab, "\n" , "class: " , max_class , min_class, "\n" , "office: " , max_office , min_office, "\n")
+    print("lab min: " , min_lab , "\nlab max: " , max_lab, "\n" , "class min: " , min_class , "\nclass max: " , max_class, "\n" , "office min: " , min_office , "\noffice max: " , max_office, "\n")
 
     temp_rev_lab = {}
 
@@ -110,9 +108,7 @@ if __name__ == "__main__":
 
     print((100*lab_bad/num_items.lab1) , " percent of lab data points were bad")
     print((100*class_bad/num_items.class1) , " percent of class data points were bad")
-    print((100*office_bad/num_items.office) , " percent of office data points were bad")
-
-    print(type(temp_rev_lab))
+    print((100*office_bad/num_items.office) , " percent of office data points were bad \n")
 
     temp_rev = {"temp": pd.DataFrame.from_dict(temp_rev_lab, "index").sort_index()}
     tempz = pd.DataFrame(temp_rev['temp'])
