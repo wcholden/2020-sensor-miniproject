@@ -69,5 +69,102 @@ After running analyze.py in the terminal, the following outputs are printed:
 	0    1.378764
 	dtype: float64 
 
-From this we can extrapolate that the median of the temperature data in the lab is about 21.00 degrees Celcius 
+From this data we can extrapolate that the median of the temperature data in the lab is about 21.00 degrees Celcius, and the variance is about 7.10.
+
+We can also extrapolate that the median of the occupancy data in the lab is about 5.00, and the variance is about 4.68.
+
+The probability density functions of each of the sensor types can be found by following the links below:
+
+temperature: https://drive.google.com/file/d/1w3t552Pa64eC8ymP9X3lqkQAtCqPk8-M/view?usp=sharing
+
+occupancy: https://drive.google.com/file/d/1_Jg4zSDsX_OFwl_RXxzGZZ-CBA2ucBEq/view?usp=sharing
+
+co2: https://drive.google.com/file/d/109TIqA39hV6FFJvPFR9-2-A-eZXxeP0v/view?usp=sharing
+
+What is the mean and variance of the time interval of the sensor readings? Please plot its probability density function. Does it mimic a well-known distribution for connection intervals in large systems? 
+
+The mean of the time interval of the sensor readings is about 1.04 seconds, and the variance is about 1.38.
+
+The PDF of the time intervals can be found by following the link below:
+
+time intervals: https://drive.google.com/file/d/1mwL2Rg3X3VM-U8W28gcPUHj9_zWVmdLM/view?usp=sharing
+
+This resembles a chi squared distribution, in that it starts our with a steep rise followed by a more gradual fall. 
+
+
+
+
+TASK 3
+
+After running our code task3.py (based on analyze.py) in the terminal, the following outputs are printed:
+
+	mean temperature: 
+	 lab1      20.886339
+	class1    26.518707
+	office    23.474051
+	dtype: float64 
+
+	temperature variance: 
+	 lab1        7.098741
+	class1    126.840789
+	office    184.235808
+	dtype: float64 
+
+	lab min:  15.557646966121329 
+	lab max:  26.215031763863802 
+	 class min:  3.99398384118458 
+	class max:  49.04343022251838 
+	 office min:  -3.6726468728146493 
+	office max:  50.620749864370495 
+
+	0.759493670886076  percent of lab data points were bad
+	1.243781094527363  percent of class data points were bad
+	0.49875311720698257  percent of office data points were bad 
+
+	new median temperature: 
+	 0    21.00206
+	dtype: float64 
+
+	new temperature variance: 
+	 0    0.415759
+	dtype: float64 
+
+From this data we may extrapolate that about 0.76% of lab temperature data points are bad, 1.24% of class temperature data points are bad, 
+and 0.50% of office temperature data points are bad. Our method for determining 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
