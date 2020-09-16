@@ -2,7 +2,7 @@ Will Holden & Stephanie Pellicane
 
 TASK 0
 
-The greeting string issued by the server to the client upon first connecting is as follows:
+1. The greeting string issued by the server to the client upon first connecting is as follows:
 
 	ECE Senior Capstone IoT simulator
 
