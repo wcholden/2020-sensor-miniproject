@@ -69,11 +69,11 @@ After running analyze.py in the terminal, the following outputs are printed:
 	0    1.378764
 	dtype: float64 
 
-From this data we can extrapolate that the median of the temperature data in the lab is about 21.00 degrees Celcius, and the variance is about 7.10.
+1. From this data we can extrapolate that the median of the temperature data in the lab is about 21.00 degrees Celcius, and the variance is about 7.10.
 
-We can also extrapolate that the median of the occupancy data in the lab is about 5.00, and the variance is about 4.68.
+2. We can also extrapolate that the median of the occupancy data in the lab is about 5.00, and the variance is about 4.68.
 
-The probability density functions of each of the sensor types can be found by following the links below:
+3. The probability density functions of each of the sensor types can be found by following the links below:
 
 temperature: https://drive.google.com/file/d/1w3t552Pa64eC8ymP9X3lqkQAtCqPk8-M/view?usp=sharing
 
@@ -81,10 +81,7 @@ occupancy: https://drive.google.com/file/d/1_Jg4zSDsX_OFwl_RXxzGZZ-CBA2ucBEq/vie
 
 co2: https://drive.google.com/file/d/109TIqA39hV6FFJvPFR9-2-A-eZXxeP0v/view?usp=sharing
 
-What is the mean and variance of the time interval of the sensor readings? Please plot its probability density function. Does it mimic a well-known distribution for connection intervals in large systems? 
-
-The mean of the time interval of the sensor readings is about 1.04 seconds, and the variance is about 1.38.
-
+4. The mean of the time interval of the sensor readings is about 1.04 seconds, and the variance is about 1.38.
 The PDF of the time intervals can be found by following the link below:
 
 time intervals: https://drive.google.com/file/d/1mwL2Rg3X3VM-U8W28gcPUHj9_zWVmdLM/view?usp=sharing
@@ -129,10 +126,24 @@ After running our code task3.py (based on analyze.py) in the terminal, the follo
 	 0    0.415759
 	dtype: float64 
 
-From this data we may extrapolate that about 0.76% of lab temperature data points are bad, 1.24% of class temperature data points are bad, 
-and 0.50% of office temperature data points are bad. Our method for determining 
+1. From this data we may extrapolate that about 0.76% of lab temperature data points are bad, 1.24% of class temperature data points are bad, 
+and 0.50% of office temperature data points are bad. Our method for determining which points are "bad" is fairly straight forward. First
+take the square root of each room's temperature variance to get the standard deviation. A data point is considered "bad" if it is over or
+under two standard deviations from the mean temperature of each room. 
 
+With the "bad" data points discarded the median temperature of the lab is still 21.00 degrees, but the variance decreased from 7.10 to 0.42. 
+This illustrates the drastic effect the ouliers have on the variance of the data. 
 
+2. A persistant change in temperature does not necessarily indicate a failed sensor. A temperatuer fluxuation could be caused by a faulty HVAC
+system or human interference (lighting candles, bringing in hot food, etc.)
+
+3. In order to accurately judge the temperature bounds of each room, a zoomed-in PDF of the temperature data is observed (link below)
+
+https://drive.google.com/file/d/1HZpzggfWYeLce8bO8XOA1RRVjlYz88e6/view?usp=sharing
+
+The temperature in the lab is usually between 18 degrees Celcius and 23 degrees Celcius (64 degrees Fahrenheit and 73 degrees Fahrenheit).
+The temperature in the office is usually between 15 degrees Celcius and 33 degrees Celcius (59 degrees Fahrenheit and 91 degrees Fahrenheit).
+the temperature in the class is usually between 20 degrees Celcius and 35 degrees Celcius (68 degrees Fahrenheit and 95 degrees Fahrenheit).
 
 
 

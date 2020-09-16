@@ -53,6 +53,7 @@ if __name__ == "__main__":
     temp = pd.DataFrame(data['temperature'])
 
     num_items = temp.count()
+    print("number of data points for each room: \n" , num_items)
 
     mean_temp = temp.mean(axis = 0)
     print("mean temperature: \n" , mean_temp , "\n")
