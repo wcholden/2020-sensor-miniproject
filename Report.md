@@ -148,7 +148,15 @@ the temperature in the class is usually between 20 degrees Celcius and 35 degree
 
 
 
+TASK 4 
 
+1. Websockets allow for softwares to send and receive data without experiencing delay. This can be used for ride sharing applications, multiplayer games, and messaging applications.
+
+2. One can imagine how a web-time out or connectivity issue could cause software problems and data collection issues, and is something that is not accounted for in this program. 
+
+3. We initially had some problems getting my websockets server and client running - when typing the command to connect to the server, there was no message diplaying that the IoT simulator began running. This problem was only solved after a computer reboot and python re-download. Once connected, however, there no issues at all. I'm assuming I had previous python packages installed that were interfering with my software, and I can  In the past I've used websockes with C++, and was required to perform more steps as opposed to two simple one line commands initializing the IoT Simulator. It appears Python is more suited for simple websocket integration.
+
+4. We predict it would be better to have the sensors reach out to the server when they have the data to prevent a backup of information. However, information polled directly from the sensor to the server can be more up-to-date than data collected and then sent to the server. It will depend on the application.
 
 
 
